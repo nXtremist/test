@@ -1,0 +1,47 @@
+body{
+    overflow-x: hidden;
+    font-size:16px;
+    cursor:default;
+}
+
+section {
+    height: 100vh;
+    overflow:hidden;
+
+    &.header {
+
+        h1 {
+            color:white;
+            font-size: 5rem;
+            transition: .5s all;
+            text-shadow: 0px 2px 7.5px rgba(0,0,0,.4);
+            
+            &:hover{
+                letter-spacing: 3px;
+                transition: .3s all;
+            }
+        }
+       
+
+        div.bg {
+            background: url('../images/hero.jpg');
+            filter: blur(15px) brightness(.65);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            scale: 1.1;
+            z-index:-1
+        }
+    }
+
+
+    &.mid {
+        background-color: aliceblue;
+        font-size: 20px;
+    }
+
+    &.footer {
+        background-color: beige;
+    }
+}
