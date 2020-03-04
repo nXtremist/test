@@ -21,6 +21,11 @@ section.header h1:hover {
   transition: .3s all;
 }
 
+section.header h3 {
+  mix-blend-mode: screen;
+  padding: 5px;
+}
+
 section.header div.bg {
   background: url("../images/hero.jpg");
   filter: blur(15px) brightness(0.65);
