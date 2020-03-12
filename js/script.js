@@ -1,3 +1,7 @@
+//global vars
+var fetched = false;
+
+//Initialize fullScroll
 new fullScroll({
     mainElement: 'main',
     displayDots: true,
@@ -5,10 +9,79 @@ new fullScroll({
     animateTime: 0.7,
     animateFunction: 'cubic-bezier(.35,.06,.25,.97)'
 });
+//InstaFeed for Mobile
+new InstagramFeed({
+    'username': 'dipti.illustration',
+    'container': document.getElementById("instagram-feed-mobile"),
+    'display_profile': false,
+    'display_biography': false,
+    'display_gallery': true,
+    'callback': null,
+    'styling': true,
+    'items': 4,
+    'items_per_row': 2,
+    'margin': 1
+});
+//Instafeed for Desktop
+new InstagramFeed({
+    'username': 'dipti.illustration',
+    'container': document.getElementById("instagram-feed"),
+    'display_profile': false,
+    'display_biography': false,
+    'display_gallery': true,
+    'get_data': false,
+    'callback': null,
+    'styling': true,
+    'items': 4,
+    'items_per_row': 4,
+    'margin': .5
+});
+
+//Check for mobile device and display appropriate div
+function checkForMobile(isMobile) {
+    if (isMobile.matches) { // If media query matches
+        $('#instagram-feed').hide();
+        $('#instagram-feed-mobile').show();
+    } else {
+        $('#instagram-feed-mobile').hide();
+        $('#instagram-feed').show();
+    }
+}
+
+var isMobile = window.matchMedia("(max-width: 700px)")
+checkForMobile(isMobile)
+isMobile.addListener(checkForMobile)
+//--end
 
 $(document).ready(function () {
     execOperation();
+    appendHeading();
 })
+
+
+// waitUntil(250, 10, function condition() {
+//     return (document.getElementsByClassName('instagram_gallery').length>0 ? true : false);
+// }, function done(result) {
+//     var temp = document.getElementsByClassName('instagram_gallery');
+//     console.log(temp)
+//     for (let index = 0; index < temp.length; index++) {
+//         const element = temp[index];
+//         element.insertAdjacentHTML('beforebegin', '<h1>TEST</h1>')
+//     }
+//     // result is true on success or false if the condition was never met
+// });
+function appendHeading() {
+    waitUntil(250, 10, function condition() {
+        return (document.getElementsByClassName('instagram_gallery').length > 1 ? true : false);
+    }, function done(result) {
+        var temp = document.getElementsByClassName('instagram_gallery');
+        console.log(temp)
+        for (let index = 0; index < temp.length; index++) {
+            const element = temp[index];
+            element.insertAdjacentHTML('beforebegin', '<h1>Latest stuff from my Insta</h1>')
+        }
+    })
+}
 
 function execOperation() {
     var temp = $('#personalAttribute').html();
@@ -65,7 +138,7 @@ const hsv_to_rgb = (h, s, v) => {
 }
 
 // # use golden ratio
-const golden_ratio_conjugate = 0.9618033988749895   //remove the initial 9
+const golden_ratio_conjugate = 0.9618033988749895 //remove the initial 9
 let h = Math.random() // # use random start value
 const gen_hex = (numberOfColors) => {
     const colorArray = []
@@ -95,9 +168,9 @@ function invertColor(hex, bw) {
         b = parseInt(hex.slice(4, 6), 16);
     if (bw) {
         // http://stackoverflow.com/a/3943023/112731
-        return (r * 0.299 + g * 0.587 + b * 0.114) > 186
-            ? '#000000'
-            : '#FFFFFF';
+        return (r * 0.299 + g * 0.587 + b * 0.114) > 186 ?
+            '#000000' :
+            '#FFFFFF';
     }
     // invert color components
     r = (255 - r).toString(16);
@@ -107,8 +180,8 @@ function invertColor(hex, bw) {
     return "#" + padZero(r) + padZero(g) + padZero(b);
 
     function padZero(str, len) {
-    len = len || 2;
-    var zeros = new Array(len).join('0');
-    return (zeros + str).slice(-len);
-}
+        len = len || 2;
+        var zeros = new Array(len).join('0');
+        return (zeros + str).slice(-len);
+    }
 }

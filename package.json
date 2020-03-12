@@ -3,6 +3,11 @@
         "node-sass": "^4.13.1"
     },
     "scripts": {
-        "node-sass": "node-sass --output-style expanded -o css scss"
+        "node-sass": "node-sass --output-style expanded -o css scss",
+        "browserify": "browserify js/require.js -o js/bundle.js"
+    },
+    "dependencies": {
+        "browserify": "^16.5.0",
+        "wait-until": "0.0.2"
     }
 }

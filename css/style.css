@@ -2,6 +2,7 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   cursor: default;
+  font-family: 'Raleway', sans-serif;
 }
 
 section {
@@ -42,6 +43,19 @@ section.mid {
   font-size: 20px;
 }
 
+section.mid-two {
+  background-color: #e9c4ff;
+  font-size: 20px;
+}
+
 section.footer {
   background-color: beige;
+}
+
+#instagram-feed h1, #instagram-feed-mobile h1 {
+  padding: 10px;
+}
+
+.instagram_gallery img {
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
 }
