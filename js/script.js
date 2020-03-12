@@ -4,7 +4,7 @@ var fetched = false;
 //Initialize fullScroll
 new fullScroll({
     mainElement: 'main',
-    displayDots: true,
+    displayDots: false,
     dotsPosition: 'left',
     animateTime: 0.7,
     animateFunction: 'cubic-bezier(.35,.06,.25,.97)'
