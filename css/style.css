@@ -5,6 +5,295 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.bg-none {
+  background-color: transparent !important;
+  transition: .5s all;
+}
+
+nav {
+  /* if backdrop support: very transparent and blurred */
+}
+
+nav.navbar {
+  width: 100%;
+  position: absolute;
+}
+
+nav .navbar-toggler {
+  border-color: transparent;
+}
+
+nav .nav-item {
+  padding: 1rem .5rem;
+}
+
+@media (max-width: 575px) {
+  nav .nav-item {
+    padding: .25rem 1.5rem;
+  }
+}
+
+nav .navbar-nav .nav-link {
+  color: beige;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  overflow: hidden;
+  width: 20vw;
+  padding: 1rem 2rem;
+}
+
+nav .navbar-nav .nav-link:before, nav .navbar-nav .nav-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: transparent;
+}
+
+nav .navbar-nav .nav-link:before {
+  top: 0;
+}
+
+nav .navbar-nav .nav-link:after {
+  bottom: 0;
+}
+
+nav .navbar-nav .nav-link:hover > * > *:before, nav .navbar-nav .nav-link:hover > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+
+nav .navbar-nav .nav-link:hover > * > * > *:before, nav .navbar-nav .nav-link:hover > * > * > *:after {
+  transform: translate3d(0, 0, 0);
+}
+
+nav .navbar-nav .nav-link > *:before, nav .navbar-nav .nav-link > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: transparent;
+}
+
+nav .navbar-nav .nav-link > *:before {
+  left: 0;
+}
+
+nav .navbar-nav .nav-link > *:after {
+  right: 0;
+}
+
+nav .navbar-nav .nav-link > * > *:before, nav .navbar-nav .nav-link > * > *:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 2px;
+  width: 100%;
+  background-color: palevioletred;
+}
+
+nav .navbar-nav .nav-link > * > *:before {
+  top: 0;
+  transform: translate3d(-105%, 0, 0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav .navbar-nav .nav-link > * > *:after {
+  bottom: 0;
+  transform: translate3d(105%, 0, 0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav .navbar-nav .nav-link > * > * > *:before, nav .navbar-nav .nav-link > * > * > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 2px;
+  background-color: palevioletred;
+}
+
+nav .navbar-nav .nav-link > * > * > *:before {
+  left: 0;
+  transform: translate3d(0, 105%, 0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav .navbar-nav .nav-link > * > * > *:after {
+  right: 0;
+  transform: translate3d(0, -105%, 0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 575px) {
+  nav .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+    width: 90%;
+    padding: 4vw 2rem;
+  }
+}
+
+nav .navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+nav.nav-bg {
+  background-color: transparent;
+  transition: .5s all;
+}
+
+@media (max-width: 575px) {
+  nav.nav-bg {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em)) {
+  @media (max-width: 575px) {
+    nav.nav-bg {
+      background-color: rgba(255, 255, 255, 0.5);
+      -webkit-backdrop-filter: blur(0.75rem);
+      backdrop-filter: blur(0.75rem);
+    }
+  }
+}
+
+.toggle {
+  display: block;
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle input + div {
+  width: 20px;
+  height: 14px;
+  position: relative;
+}
+
+.toggle input + div div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform .5s ease;
+}
+
+.toggle input + div div span {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.toggle input + div div span:first-child {
+  top: 0;
+}
+
+.toggle input + div div span:first-child:before, .toggle input + div div span:first-child:after {
+  top: 0;
+}
+
+.toggle input + div div span:last-child {
+  bottom: 0;
+}
+
+.toggle input + div div span:last-child:before, .toggle input + div div span:last-child:after {
+  bottom: 0;
+}
+
+.toggle input + div div span:before, .toggle input + div div span:after {
+  content: '';
+  display: block;
+  width: 47%;
+  height: 2px;
+  border-radius: 1px;
+  background: #333;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  transition: transform .5s ease, border-radius .3s ease, background .4s ease;
+}
+
+.toggle input + div div span:before {
+  left: 0;
+  transform-origin: 0 50%;
+  transform: translate(1px, 0) scaleX(1.1);
+}
+
+.toggle input + div div span:after {
+  right: 0;
+  transform-origin: 100% 50%;
+  transform: translate(-1px, 0) scaleX(1.1);
+}
+
+.toggle input + div svg {
+  display: block;
+  fill: none;
+  stroke: #333;
+  stroke-width: 2px;
+  width: 44px;
+  height: 44px;
+  stroke-linecap: round;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -22px 0 0 -22px;
+  stroke-dasharray: 0 82.801 8 82.801;
+  stroke-dashoffset: 82.801;
+  transform-origin: 50% 50%;
+  -webkit-backface-visibility: hidden;
+  transform: scale(1);
+  transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, transform .5s ease, stroke .4s ease;
+}
+
+.toggle input + div svg:nth-child(3) {
+  transform: rotate(180deg) scale(1);
+}
+
+.toggle input:checked + div div {
+  transform: rotate(90deg);
+}
+
+.toggle input:checked + div div span:before, .toggle input:checked + div div span:after {
+  background: palevioletred;
+}
+
+.toggle input:checked + div div span:first-child:before {
+  transform: rotate(45deg) translate(2.2px, -3px) scaleX(1.05);
+}
+
+.toggle input:checked + div div span:first-child:after {
+  transform: rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05);
+}
+
+.toggle input:checked + div div span:last-child:before {
+  transform: rotate(-45deg) translate(2.2px, 3px) scaleX(1.05);
+}
+
+.toggle input:checked + div div span:last-child:after {
+  transform: rotate(45deg) translate(-2.2px, 3px) scaleX(1.05);
+}
+
+.toggle input:checked + div svg {
+  stroke-dashoffset: 62;
+  stroke-dasharray: 0 82.801 62 82.801;
+  transform: rotate(90deg);
+  stroke: palevioletred;
+}
+
+.toggle input:checked + div svg:nth-child(3) {
+  transform: rotate(270deg);
+}
+
 section {
   height: 100vh;
   overflow: hidden;
@@ -12,7 +301,7 @@ section {
 
 section.header h1 {
   color: white;
-  font-size: 5rem;
+  font-size: 4.5rem;
   transition: .5s all;
   text-shadow: 0px 2px 7.5px rgba(0, 0, 0, 0.4);
 }
@@ -22,9 +311,32 @@ section.header h1:hover {
   transition: .3s all;
 }
 
+@media (max-width: 575px) {
+  section.header h1 {
+    font-size: 12vw;
+  }
+}
+
 section.header h3 {
   mix-blend-mode: screen;
   padding: 5px;
+  animation: rotate-hue 10s infinite ease;
+}
+
+@keyframes rotate-hue {
+  0%,
+  100% {
+    filter: hue-rotate(0);
+  }
+  50% {
+    filter: hue-rotate(120deg);
+  }
+}
+
+@media (max-width: 575px) {
+  section.header h3 {
+    font-size: 5vw;
+  }
 }
 
 section.header div.bg {
@@ -34,8 +346,14 @@ section.header div.bg {
   height: 100%;
   width: 100%;
   position: absolute;
-  scale: 1.1;
+  transform: scale(1.1, 1.1);
   z-index: -1;
+}
+
+@media (max-width: 575px) {
+  section.header div.bg {
+    transform: scale(1.34, 1.34);
+  }
 }
 
 section.mid {
@@ -52,10 +370,17 @@ section.footer {
   background-color: beige;
 }
 
-#instagram-feed h1, #instagram-feed-mobile h1 {
+#collapsibleNavbar li:first-child {
+  color: blue;
+}
+
+#instagram-feed h1,
+#instagram-feed-mobile h1 {
   padding: 10px;
+  margin-bottom: 1vw;
 }
 
 .instagram_gallery img {
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+  padding: .5rem;
 }

@@ -13,8 +13,75 @@
 </head>
 
 <body>
+
     <div id="main" class="container-fluid p-0 scroll-container text-center">
+        <nav class="navbar navbar-expand-sm justify-content-center" id="mainNav">
+            <label class="navbar-toggler toggle mt-3 mb-4">
+                <input type="checkbox" id="navToggle">
+                <div>
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                </div>
+            </label>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                    <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                </symbol>
+            </svg>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <hr class="m-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#0">
+                            <span>
+                                <span>
+                                    <span>Home</span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#1">
+                            <span>
+                                <span>
+                                    <span>About</span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2">
+                            <span>
+                                <span>
+                                    <span>Insta</span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#4">
+                            <span>
+                                <span>
+                                    <span>Contact</span>
+                                </span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <section class="header d-flex align-items-center justify-content-center">
+
             <div class="bg"></div>
             <div>
                 <h1 class="mb-3">Some Name</h1>
@@ -53,9 +120,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="./js/bundle.js"></script>
     <script src="./js/full-page-scroll.js"></script>
     <script src="./js/InstagramFeed.min.js"></script>
+    <script src="./js/bundle.js"></script>
+
+    <script src="./js/library.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
