@@ -332,9 +332,15 @@ section.header h3 {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 400px) {
   section.header h3 {
-    font-size: 6vw;
+    font-size: 5.75vw;
+  }
+}
+
+@media (max-width: 575px) and (min-width: 401px) {
+  section.header h3 {
+    font-size: 4.75vw;
   }
 }
 
@@ -385,7 +391,7 @@ video {
 @media (max-width: 575px) {
   #instagram-feed h1,
   #instagram-feed-mobile h1 {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 }
 
