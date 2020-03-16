@@ -29,8 +29,8 @@ new InstagramFeed({
     'get_data': false,
     'callback': null,
     'styling': true,
-    'items': 8,
-    'items_per_row': 4,
+    'items': 10,
+    'items_per_row': 5,
     'margin': .5
 });
 

@@ -18,6 +18,9 @@ $(document).ready(function () {
     execOperation();
     appendHeading();
     $('.nav-link').click(function () {
+        $('#mainNav').removeClass('nav-bg');
+        $('#mainNav').addClass('bg-none');
+        $('#navToggle').prop('checked', false)
         $('.collapse').collapse('hide')
     });
     $('#navToggle').click(function () {
@@ -26,26 +29,24 @@ $(document).ready(function () {
             $('#mainNav').removeClass('bg-none')
             $('#mainNav').addClass('nav-bg')
             $('#collapsibleNavbar').collapse('show')
-            
+            $('label.navbar-toggler').css('pointer-events', 'none')
+            setTimeout(function () {
+                $('label.navbar-toggler').css('pointer-events', 'initial')
+            }, 450)
 
         } else {
-             $('#mainNav').removeClass('nav-bg');
+            $('#mainNav').removeClass('nav-bg');
             $('#mainNav').addClass('bg-none');
             $('#collapsibleNavbar').collapse('hide')
+            $('label.navbar-toggler').css('pointer-events', 'none')
+            setTimeout(function () {
+                $('label.navbar-toggler').css('pointer-events', 'initial')
+            }, 450)
+
         }
-
-
-        //var parent = $(this).parent();
-        // if (parent.hasClass('nav-bg'))
-        // parent.removeClass('nav-bg')
-        // else
-        // parent.addClass('nav-bg');
-        // $('.nav-bg').addClass("background-color","rgba(255,255,255,.85)");
-        // console.log(parent.hasClass('nav-bg'))
     })
 
 })
-
 
 function appendHeading() {
     waitUntil(250, 10, function condition() {

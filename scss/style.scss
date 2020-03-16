@@ -1,4 +1,5 @@
 $mobileWidth: 575px;
+
 // Mixin for shadow button with block sliding up
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
     $easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -192,6 +193,7 @@ $mobileWidth: 575px;
                             background: $color;
                             position: absolute;
                             -webkit-backface-visibility: hidden;
+                            backface-visibility: hidden;
                             transition: transform .5s ease, border-radius .3s ease, background .4s ease;
                         }
 
@@ -225,6 +227,7 @@ $mobileWidth: 575px;
                     stroke-dashoffset: 82.801;
                     transform-origin: 50% 50%;
                     -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
                     transform: scale(1);
                     transition: stroke-dashoffset .5s ease, stroke-dasharray .6s ease, transform .5s ease, stroke .4s ease;
 
@@ -289,15 +292,16 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.bg-none{
+.bg-none {
     background-color: transparent !important;
-    transition: .5s all;
+    transition: .35s all;
 }
 
 nav {
     &.navbar {
         width: 100%;
         position: absolute;
+        z-index:9;
     }
 
     .navbar-toggler {
@@ -310,8 +314,6 @@ nav {
         @media (max-width:$mobileWidth) {
             padding: .25rem 1.5rem;
         }
-
-        ;
     }
 
     .navbar-nav .nav-link {
@@ -335,26 +337,38 @@ nav {
 
     &.nav-bg {
         background-color: transparent;
-        transition: .5s all;;
+        transition: .35s all;
+        ;
 
         @media (max-width:$mobileWidth) {
-            background-color: rgba(255, 255, 255, .85);
+            background-color: rgba(255, 255, 255, .9);
         }
     }
 
-    /* if backdrop support: very transparent and blurred */
     @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
         &.nav-bg {
             @media (max-width:$mobileWidth) {
-                background-color: rgba(255, 255, 255, .5);
+                background-color: rgba(255, 255, 255, .6);
                 -webkit-backdrop-filter: blur(.75rem);
-                backdrop-filter: blur(.75rem);
+                backdrop-filter: blur(.5rem) saturate(.6);
             }
         }
     }
 }
-@include menu-icon(#333, palevioletred);
 
+@include menu-icon(rgb(219, 219, 192), palevioletred);
+
+// nav.nav-bg::before {
+//     content: "";
+//     background-color:
+//         rgba(255, 255, 255, 0.667);
+//     width: 130%;
+//     height: 130%;
+//     position: absolute;
+//     display: block;
+//     z-index: 0;
+//     filter: blur(100px);
+// }
 
 section {
     height: 100vh;
@@ -396,7 +410,7 @@ section {
             }
 
             @media(max-width: $mobileWidth) {
-                font-size: 5vw;
+                font-size: 6vw;
             }
         }
 
@@ -433,17 +447,29 @@ section {
     }
 }
 
+video{
+    width:100%;
+    max-width: 50%;
+    margin: 1rem;
+}
+
 #instagram-feed,
 #instagram-feed-mobile {
     h1 {
         padding: 10px;
         margin-bottom: 1vw;
+        font-size: 2.25rem;
+
+        @media(max-width: $mobileWidth) {
+            font-size: 6vw;
+        }
     }
 }
+
+
 
 .instagram_gallery {
     img {
         box-shadow: 0px 0px 7px rgba(0, 0, 0, .5);
-        padding: .5rem;
     }
 }

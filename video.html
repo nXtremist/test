@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Video Test</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm justify-content-center align-items-center" id="mainNav">
+        <label class="navbar-toggler toggle mt-3 mb-4">
+            <input type="checkbox" id="navToggle">
+            <div>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+                <svg>
+                    <use xlink:href="#path">
+                </svg>
+                <svg>
+                    <use xlink:href="#path">
+                </svg>
+            </div>
+        </label>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+            </symbol>
+        </svg>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mt-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="test.html" id="testNavClick">
+                        <span>
+                            <span>
+                                <span>TEST</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#1">
+                        <span>
+                            <span>
+                                <span>About</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#2">
+                        <span>
+                            <span>
+                                <span>Insta</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#4">
+                        <span>
+                            <span>
+                                <span>Contact</span>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="d-flex container-fluid">
+        <video src="./video/1.mp4" autoplay="true"></video>
+        <video src="./video/2.mp4" autoplay="true"></video>
+        <video src="./video/1.mp4" autoplay="true"></video>
+        <video src="./video/2.mp4" autoplay="true"></video>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $('video').hover(this.play())
+    </script>
+
+</body>
+
+</html>
