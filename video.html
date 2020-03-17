@@ -77,8 +77,8 @@
         </div>
     </nav>
     <section class="d-flex container-fluid">
-        <video src="./video/1.mp4" autoplay="true"></video>
-        <video src="./video/2.mp4" autoplay="true"></video>
+        <video src="./video/1.mp4" ></video>
+        <video src="./video/2.mp4" ></video>
         <video src="./video/1.mp4" autoplay="true"></video>
         <video src="./video/2.mp4" autoplay="true"></video>
     </section>
@@ -95,7 +95,7 @@
     </script>
 
     <script>
-        $('video').hover(this.play())
+        $('video').hover(function(){this.play()})
     </script>
 
 </body>

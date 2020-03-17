@@ -149,6 +149,12 @@
 				_self.defaults.currentPosition --;
 				_self.changeCurrentPosition(_self.defaults.currentPosition);	
 			}
+			if(_self.defaults.currentPosition>0){
+				$('#toTop').fadeIn();
+			}
+			else if(_self.defaults.currentPosition<=0){
+				$('#toTop').fadeOut();
+			}
 			_self.removeEvents();
 		};
 
