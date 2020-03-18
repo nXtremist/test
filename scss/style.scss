@@ -482,10 +482,12 @@ section {
             }
         }
         .hero-link{
-            @include btn-border-slide(transparent, palevioletred, 2px, 0.5s);
+            @include btn-border-slide(rgba(248, 214, 226, 0.65), palevioletred, 2px, 0.5s);
             padding:.75rem 2rem;
-            margin: .75rem 2rem;
+            margin:1rem 1rem 0rem 1rem;
             width:50%;
+            color:beige;
+            font-size:1.125rem;
         }
     }
 
