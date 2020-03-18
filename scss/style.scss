@@ -1,4 +1,4 @@
-$mobileWidth: 575px;
+$mobileWidth: 767px;
 
 // Mixin for shadow button with block sliding up
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
@@ -301,7 +301,6 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-
 .loader {
     width: 100%;
     height: 100%;
@@ -378,7 +377,7 @@ nav {
         }
     }
 
-    .navbar-nav .nav-link {
+    .nav-link {
         color: beige;
         @include btn-border-slide(transparent, palevioletred, 2px, 0.5s);
         width: 20vw;
@@ -468,10 +467,9 @@ section {
             }
         }
 
-
         div.bg {
             background: url('../images/hero.jpg');
-            filter: blur(15px) brightness(.65);
+            // filter: blur(15px) brightness(.65);
             background-size: cover;
             height: 100%;
             width: 100%;
@@ -483,12 +481,22 @@ section {
                 transform: scale(1.34, 1.34);
             }
         }
+        .hero-link{
+            @include btn-border-slide(transparent, palevioletred, 2px, 0.5s);
+            padding:.75rem 2rem;
+            margin: .75rem 2rem;
+            width:50%;
+        }
     }
-
 
     &.about {
         background-color: aliceblue;
         font-size: 20px;
+
+        figure img {
+            width: 100px;
+            height: 100px;
+        }
     }
 
     &.instagram {
@@ -496,15 +504,19 @@ section {
         font-size: 20px;
     }
 
-    &.testimonials{
+    &.testimonials {
         background-color: honeydew;
 
-        .carousel-inner{
-            height:270px;
+        .carousel-inner {
+            height: 270px;
 
-            p{
-                font-size:1.1rem;
+            p {
+                font-size: 1.1rem;
             }
+        }
+
+        .carousel-item {
+            padding: 0 .5rem;
         }
     }
 

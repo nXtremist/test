@@ -1,14 +1,21 @@
+testimonialStorage = [];
+var isMobile = window.matchMedia("(max-width: 750px)")
 $(document).ready(function () {
+
     $('#toTop').hide().click(function () {
         $(this).fadeOut(350)
     });
-    $('.truncate').succinct({
-            size: 300
-        });
+    $('.truncate').each(function (a, b) {
+        testimonialStorage.push(b.innerText)
+    })
+
     personalAttributeStyler();
     appendHeading();
     collapseNavOnClick();
     navBgTransition();
+
+    checkForMobile(isMobile)
+    isMobile.addListener(checkForMobile)
 })
 window.addEventListener('load', function () {
     $('.loader').fadeOut();
@@ -16,20 +23,29 @@ window.addEventListener('load', function () {
 //Check for mobile device and display appropriate div
 function checkForMobile(isMobile) {
     if (isMobile.matches) { // If media query matches
+        $('.truncate').each(function (a, b) {
+            b.innerText = testimonialStorage[a];
+        })
+        delimiter = 190;
+        $('.truncate').succinct({
+            size: delimiter
+        });
         $('#instagram-feed').hide();
         $('#instagram-feed-mobile').show();
+
     } else {
+        $('.truncate').each(function (a, b) {
+            b.innerText = testimonialStorage[a];
+        })
+        delimiter = 500;
+        $('.truncate').succinct({
+            size: delimiter
+        });
         $('#instagram-feed-mobile').hide();
         $('#instagram-feed').show();
     }
 }
-
-var isMobile = window.matchMedia("(max-width: 750px)")
-checkForMobile(isMobile)
-isMobile.addListener(checkForMobile)
 //--end
-
-
 
 function appendHeading() {
     waitUntil(500, Infinity, function condition() {

@@ -5,12 +5,21 @@
     "scripts": {
         "node-sass": "node-sass --output-style compressed -o css scss",
         "browserify": "browserify js/require.js -o js/bundle.js",
-        "uglify": "uglifyjs --compress --mangle --output js/script.min.js -- js/full-page-scroll.js js/succinct.min.js js/InstagramFeed.min.js js/bundle.js js/library.js js/script.js"
+        "uglify": "uglifyjs --compress --mangle --output js/script.min.js -- js/full-page-scroll.js js/succinct.min.js js/InstagramFeed.min.js js/bundle.js js/library.js js/script.js",
+        "test": "npx postcss ./css/*.css --use autoprefixer -d build/"
     },
     "dependencies": {
+        "autoprefixer": "^9.7.4",
         "browserify": "^16.5.0",
+        "postcss-cli": "^7.1.0",
         "uglify-es": "^3.3.9",
         "uglify-js": "^3.8.0",
         "wait-until": "0.0.2"
-    }
+    },
+    "browserslist": [
+        "defaults",
+        "cover 95.5%",
+        "IE 10",
+        "bb 10"
+    ]
 }
