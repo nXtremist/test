@@ -1,4 +1,6 @@
 $mobileWidth: 767px;
+$desktopNavTextColor:beige;
+$mobileNavTextColor:rgba(0,0,0,.9);
 
 // Mixin for shadow button with block sliding up
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
@@ -378,14 +380,14 @@ nav {
     }
 
     .nav-link {
-        color: beige;
+        color: $desktopNavTextColor;
         @include btn-border-slide(transparent, palevioletred, 2px, 0.5s);
         width: 20vw;
         padding: 1rem 2rem;
 
 
         @media (max-width:$mobileWidth) {
-            color: rgba(0, 0, 0, .9);
+            color: $mobileNavTextColor;
             width: 90%;
             padding: 4vw 2rem;
         }
@@ -481,13 +483,14 @@ section {
                 transform: scale(1.34, 1.34);
             }
         }
-        .hero-link{
+
+        .hero-link {
             @include btn-border-slide(rgba(248, 214, 226, 0.65), palevioletred, 2px, 0.5s);
-            padding:.75rem 2rem;
-            margin:1rem 1rem 0rem 1rem;
-            width:50%;
-            color:beige;
-            font-size:1.125rem;
+            padding: .75rem 2rem;
+            margin: 1rem 1rem 0rem 1rem;
+            width: 50%;
+            color: $desktopNavTextColor;
+            font-size: 1.125rem;
         }
     }
 
@@ -551,6 +554,15 @@ video {
 
         @media (max-width: $mobileWidth) {
             background-color: #00000088;
+        }
+    }
+}
+
+#video {
+    @media (max-width: 767px) {
+        nav .nav-link {
+            width: 40%;
+            color: $desktopNavTextColor;
         }
     }
 }
