@@ -18,7 +18,9 @@ $(document).ready(function () {
     isMobile.addListener(checkForMobile)
 })
 window.addEventListener('load', function () {
-    $('.loader').fadeOut();
+    setTimeout(function () {
+        $('.loader').fadeOut()
+    }, 750);
 })
 //Check for mobile device and display appropriate div
 function checkForMobile(isMobile) {
