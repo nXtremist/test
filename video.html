@@ -8,20 +8,33 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <style>
+        body {
+            overflow-y: scroll;
+        }
+
         .grid-item {
+            float: left;
             width: 200px;
-            height: 300px;
+            height: 400px;
             background-color: beige;
-            margin:.25rem;
-            border-radius: 20px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
         .grid-item--width2 {
+            background-color: maroon;
+            height: 200px;
             width: 400px;
-            height: 400px;
-            background-color: red;
-            border-radius: 20px;
-            margin:.25rem;
+        }
+
+        .grid-item--height2 {
+            background-color: green;
+            width: 20;
+            height: 200px;
+        }
+
+        #video nav.navbar {
+            position: relative;
         }
     </style>
     <title>Video Test</title>
@@ -29,7 +42,7 @@
 
 <body style="background-color: cadetblue;">
     <div class="loader"></div>
-    <div id="video" class="container-fluid p-0 text-center">
+    <div id="video" class="text-center">
         <nav class="navbar justify-content-center align-items-center" id="mainNav">
             <!-- <div class="collapse navbar-collapse" id="collapsibleNavbar"> -->
             <ul class="navbar-nav mt-2">
@@ -45,13 +58,26 @@
             </ul>
             <!-- </div> -->
         </nav>
+        <div class="container-fluid">
+            <div class="grid">
+
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--width2">...</div>
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--height2"></div>
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--width2">...</div>
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--height2"></div>
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--width2">...</div>
+                <div class="grid-item">...</div>
+                <div class="grid-item grid-item--height2"></div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="grid">
-        <div class="grid-item">...</div>
-        <div class="grid-item grid-item--width2">...</div>
-        <div class="grid-item">...</div>
-    </div>
 
     <!-- <section class="d-flex container-fluid">
         <video src="./video/1.mp4"></video>
@@ -64,6 +90,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <!-- https://github.com/suprb/nested/ -->
+    <!-- https://github.com/yconst/Freetile -->
+    <!-- https://github.com/xlune/jQuery-vGrid-Plugin -->
     <script>
         window.addEventListener('load', function () {
             $('.loader').fadeOut();
@@ -71,7 +100,7 @@
         $('.grid').masonry({
             // options
             itemSelector: '.grid-item',
-            columnWidth:0
+            gutter:10
         });
         $('video').hover(function () {
             this.play()
