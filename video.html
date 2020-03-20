@@ -7,91 +7,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        body {
-            overflow-y: scroll;
-        }
-
-        .grid-item {
-            float: left;
-            width: 200px;
-            height: 300px;
-            background-color: beige;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .head {
-            height: 80%;
-            transition: .35s all ease;
-            transition-delay: .15s;
-            background-color: aqua;
-        }
-
-        .head:after {
-            position: absolute;
-            transition: .5s all ease;
-            opacity: 0;
-            left:12.5px;
-            display: inline-block;
-            content: "";
-            width: 85%;
-            height: 80%;
-            border-bottom: 2px solid rgba(23, 22, 23, .3);
-            border-top: 2px solid rgba(23, 22, 23, .3);
-            transform: scale(1.1) translateY(30px);
-        }
-
-        .head:before {
-            transition: .5s all ease;
-            opacity: 0;
-            display: inline-block;
-            content: "";
-            width: 75%;
-            height: 87%;
-            border-left: 2px solid rgba(23, 22, 23, .3);
-            border-right: 2px solid rgba(23, 22, 23, .3);
-            transform: scale(1.1) translateY(21px);
-        }
-
-        .head:hover {
-            transition: .35s all;
-            height: 100%;
-        }
-
-        .head:hover:after,
-        .head:hover:before {
-            transition: .5s all ease;
-            opacity: 1;
-        }
-
-        .foot {
-            height: 20%;
-            background-color: blueviolet;
-            transition: .5s all;
-        }
-
-        .grid-item--width2 {
-            background-color: maroon;
-            width: 200px;
-            height: 350px;
-        }
-
-        .grid-item--height2 {
-            background-color: green;
-            width: 200px;
-            height: 200px;
-        }
-
-        #video nav.navbar {
-            position: relative;
-        }
-    </style>
     <title>Video Test</title>
 </head>
 
-<body style="background-color: cadetblue;">
+<body style="background-color: cadetblue; overflow-y: scroll;">
     <div class="loader"></div>
     <div id="video" class="text-center">
         <nav class="navbar justify-content-center align-items-center" id="mainNav">
