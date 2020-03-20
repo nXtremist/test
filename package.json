@@ -18,7 +18,8 @@
     },
     "browserslist": [
         "defaults",
-        "cover 95.5%",
+        "cover 96%",
+        "not dead",
         "IE 10",
         "bb 10"
     ]
