@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "node-sass": "^4.13.1"
+        "node-sass": "^7.0.3"
     },
     "scripts": {
         "node-sass": "node-sass --output-style compressed -o css scss",
