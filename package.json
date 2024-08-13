@@ -9,9 +9,9 @@
         "test": "npx postcss ./css/*.css --use autoprefixer -d build/"
     },
     "dependencies": {
-        "autoprefixer": "^9.7.4",
+        "autoprefixer": "^10.4.20",
         "browserify": "^16.5.0",
-        "postcss-cli": "^7.1.0",
+        "postcss-cli": "^11.0.0",
         "uglify-es": "^3.3.9",
         "uglify-js": "^3.8.0",
         "wait-until": "0.0.2"
